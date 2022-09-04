@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Arte ad Arte</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta charset="UTF-8">
+	<link rel="shortcut icon" href="https://2wtnt.tk/me.png" type="image/x-icon">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Mono">
+	<link rel="stylesheet" href="https://2wtnt.tk/css.css">
+	<script type="text/javascript" src="https://2wtnt.tk/js.js"></script>
+<style>
+
+:root {
+	--TopBarHeight: 4rem;
+	--color1: white;
+	--color2: black;
+	--color3: rgba(255,118,166,.977);
+}
+
+#no-js {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100vw;
+	height: 100vh;
+	padding: 0px;
+	margin: 0px;
+	border: 0px;
+	background: rgba(245,245,245,1);
+	z-index: 1000000;
+} #no-js > p {
+	position: absolute;
+	left: 50%;
+	top: 45%;
+	transform: translate(-50%,-50%);
+}
+
+#main {
+	position: absolute;
+	top: var(--TopBarHeight,4rem);
+	left: 50%;
+	width: 94%;
+	max-width: 40rem;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-webkit-hyphens: auto;
+	hyphens: auto;
+	word-wrap: break-word;
+	transform: translateX(-50%);
+}
+
+.topbar {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: var(--TopBarHeight,4rem);
+	background: black;
+} .topbar > ul {
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	width: 100%;
+	max-width: 34rem;
+	color: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	list-style: none;
+	transform: translateX(-50%);
+}
+
+.btn {
+	cursor: grab;
+} .btn:hover {
+	color: rgba(255,128,156,1);
+	transform: scale(1.1);
+	transform-origin: center 70%;
+} .class-n1 {
+	color: var(--color3,rgba(255,118,166,.977));
+}
+
+.Canva-iframe {
+	display: block;
+	border: none;
+	padding: 0px;
+	margin: 0px;
+	width: 28rem;
+	height: 18.75rem;
+}
+
+</style>
+<script>
+
+function fixTopbar() {
+	let d = ['Home','Me','Date'];
+	for(let i=0; i<d.length; i++) {
+		document.querySelectorAll('.topbar > ul > li')[i].innerHTML = '<div class="btn Page'+d[i]+'" onclick="DisplayPage(\''+d[i]+'\')">'+document.querySelectorAll('.topbar > ul > li')[i].innerHTML+'</div>';
+	};
+};
+
+function DisplayPage(p) {
+	document.querySelector('#main').innerHTML = document.querySelector('#Page'+p).innerHTML;
+	for(let i=0; i<document.querySelectorAll('.topbar > ul > li').length; i++) if(document.querySelectorAll('.topbar > ul > li:nth-child('+i+') > div').classList.length!=0) document.querySelectorAll('.topbar > ul > li:nth-child('+i+') > div').classList.replaceAll(' class-n1','') ; ;
+	document.querySelector('#Page'+p).classList.add('class-n1');
+};
+
+function nojs() {
+	document.getElementById('no-js').outerHTML = '';
+};
+
+window.onload = function() {
+	nojs();
+	DisplayPage('Home');
+	fixTopbar();
+};
+
+</script>
+</head>
+<body>
+
+<div id="no-js"><p>Sorry,<br />your browser may not support JavaScript<br />or, if you have them disabled, please enable them.</p></div>
+<div class="_DN">
+	<div id="PageHome">HomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHome
+		<!--iframe allowfullscreen="" class="Canva-iframe" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFHi9TVZAM/ysXVdK8Mi_sOCTGglxkEQg/view?embed" title="disegni test"></iframe>
+		<iframe allowfullscreen="" frameborder="0" height="440" onload="this.contentWindow.console.log=function() {};" src="https://instagram.com/arte_ad_arte/" title="Arte ad Arte - Instagram.com" width="320"></iframe-->
+	</div>
+	<div id="PageMe">
+	</div>
+	<div id="PageDate">
+	</div>
+</div>
+
+<div id="main"></div>
+
+<div class="topbar">
+	<ul>
+		<li>Home</li>
+		<li>Chi sono, Cosa voglio fare</li>
+		<li>Quando ci si vede</li>
+	</ul>
+</div>
+
+</body>
+</html>
