@@ -10,6 +10,10 @@
 	<script type="text/javascript" src="https://2wtnt.tk/js.js"></script>
 <style>
 
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
+
 :root {
 	--TopBarHeight: 4rem;
 	--color1: white;
@@ -104,6 +108,33 @@
 	text-align: center;
 }
 
+#id-n1 {
+	margin-top: 2.6rem;
+} #id-n1 p {
+    margin-block-start: 2em;
+    margin-block-end: 2em;
+} #id-n1::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url("data/goccia.png") no-repeat fixed center;
+	background-size: contain;
+	opacity: .17;
+	content: "";
+}
+
+.cursiveEleg {
+	font-family: 'Great Vibes', cursive;
+}
+.cursive {
+	font-family: 'Cedarville Cursive', cursive;
+}
+.handwrite {
+	font-family: 'Kalam', cursive;
+}
+
 </style>
 <script>
 
@@ -157,24 +188,25 @@ window.onload = function() {
 		<iframe allowfullscreen="" frameborder="0" height="440" onload="this.contentWindow.console.log=function() {};" src="https://instagram.com/arte_ad_arte/" title="Arte ad Arte - Instagram.com" width="320"></iframe-->
 	</div>
 	<div id="PageMe">
-		<h1>Mi presento</h1>
-		<p>Mi è stato dato in dono un talento</p>
-		<span class="SpanTextCenter">il disegno</span>
-		<p>
-			amo l'arte in tutte le sue forme<br />
-			la bellezza, l'amore per la creazione e la passione per la vita sono gocce di saggezza che è bene liberare come i cerchi dell'acqua che si espandono
-		</p>
-		<img alt="Goccia" src="data/goccia.png">
-		<p>
-			Il mio talento lo metto a disposizione per chi ha un animo creativo ma non osa.<br />
-			Propongo lezioni di educazione al disegno per chi pensa di non saper disegnare<br />
-			<ul>
-				<li>Per i bambini che oltre a leggere e scrivere è possibile educarli al disegno;</li>
-				<li>Per adolescenti e ragazzi come orientamento per la scelta della scuola superiore o il percorso post-diploma;</li>
-				<li>Per i giovani adulti per il <span class="qot">non è mai troppo tardi</span>.</li>
-			</ul>
-			Diplomata nel 1992 al Liceo Artistico Umberto Boccioni di Milano.
-		</p>
+		<div id="id-n1">
+			<center><h1>Mi presento</h1></center>
+			<p>Mi è stato dato in dono un talento</p>
+			<center class="cursiveEleg" style="transform:scale(1.31)translateX(-.39em);">Il disegno</center>
+			<p class="handwrite">
+				amo l'arte in tutte le sue forme<br />
+				la bellezza, l'amore per la creazione e la passione per la vita sono gocce di saggezza che è bene liberare come i cerchi dell'acqua che si espandono
+			</p>
+			<p>
+				Il mio talento lo metto a disposizione per chi ha un animo creativo ma non osa.<br />
+				Propongo lezioni di educazione al disegno per chi pensa di non saper disegnare:<br />
+				<ul>
+					<li>Per i bambini che oltre a leggere e scrivere è possibile educarli al disegno;</li>
+					<li>Per adolescenti e ragazzi come orientamento per la scelta della scuola superiore o il percorso post-diploma;</li>
+					<li>Per i giovani adulti per il <span class="qot">non è mai troppo tardi</span>.</li>
+				</ul>
+				<p>Diplomata nel 1992 al Liceo Artistico Umberto Boccioni di Milano.</p>
+			</p>
+		</div>
 	</div>
 	<div id="PageRef">
 		<div class="_CX">
