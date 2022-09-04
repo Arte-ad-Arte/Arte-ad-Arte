@@ -90,19 +90,49 @@
 	height: 18.75rem;
 }
 
+.Canva-iframe-Full {
+	display: block;
+	border: none;
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	height: 93vh;
+}
+
+.SpanTextCenter {
+	width: 100%;
+	text-align: center;
+}
+
 </style>
 <script>
 
 function fixTopbar() {
-	let d = ['Home','Me','Date'];
+	let d = ['Home','Me','Ref','EAD','PortFolio','Gallery'];
 	for(let i=0; i<d.length; i++) {
-		document.querySelectorAll('.topbar > ul > li')[i].innerHTML = '<div class="btn Page'+d[i]+'" onclick="DisplayPage(\''+d[i]+'\')">'+document.querySelectorAll('.topbar > ul > li')[i].innerHTML+'</div>';
+		document.querySelectorAll('.topbar > ul > li')[i].innerHTML = '<div class="btn TopBarLi Page'+d[i]+'" onclick="DisplayPage(\''+d[i]+'\')">'+document.querySelectorAll('.topbar > ul > li')[i].innerHTML+'</div>';
 	};
 };
 
 function DisplayPage(p) {
 	document.querySelector('#main').innerHTML = document.querySelector('#Page'+p).innerHTML;
-	for(let i=0; i<document.querySelectorAll('.topbar > ul > li').length; i++) if(document.querySelectorAll('.topbar > ul > li:nth-child('+i+') > div').classList.length!=0) document.querySelectorAll('.topbar > ul > li:nth-child('+i+') > div').classList.replaceAll(' class-n1','') ; ;
+	for(let i=0; i<document.querySelectorAll('.topbar > ul > li').length; i++) {
+		//~ console.log(document.querySelector('.TopBarLi:nth-child('+i+') > div'));
+		//~ console.log(document.querySelectorAll('.TopBarLi'));
+		//~ console.log(i,document.querySelectorAll('.TopBarLi:nth-child('+(i+1)+')'));
+
+		//~ console.log(document.querySelector('.topbar > ul > li:nth-child('+i+') > div'));
+		//~ console.log(document.querySelector('.topbar > ul > li:nth-child('+(i+1)+')'));
+		//~ console.log(document.querySelector('.topbar > ul > li:nth-child('+(i+1)+') > div'));
+		//~ console.log(document.querySelector('.TopBarLi:nth-child('+(i+1)+') > div'));
+
+		//~ console.log(document.querySelector('.TopBarLi:nth-child('+(i+1)+')'));
+		//~ console.log(document.querySelector('.TopBarLi:nth-child('+(i+1)+')').classList.value.replaceAll('btn',''));
+		//~ let ClassList = document.querySelector('.TopBarLi:nth-child('+(i+1)+')').classList.value;
+		//~ console.log(ClassList.replaceAll);
+
+		//~ console.log(document.querySelector('.TopBarLi:nth-child('+(i+1)+')').classList.value.replaceAll(' class-n1',''));
+		if(document.querySelector('.TopBarLi:nth-child('+(i+1)+')').classList.value.length!=0) document.querySelector('.TopBarLi:nth-child('+(i+1)+')').classList.value.replaceAll(' class-n1','') ; };
 	document.querySelector('#Page'+p).classList.add('class-n1');
 };
 
@@ -112,8 +142,8 @@ function nojs() {
 
 window.onload = function() {
 	nojs();
-	DisplayPage('Home');
 	fixTopbar();
+	DisplayPage('Home');
 };
 
 </script>
@@ -122,13 +152,62 @@ window.onload = function() {
 
 <div id="no-js"><p>Sorry,<br />your browser may not support JavaScript<br />or, if you have them disabled, please enable them.</p></div>
 <div class="_DN">
-	<div id="PageHome">HomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHomeHome
+	<div id="PageHome">Educa l'arte che c'è in te.
 		<!--iframe allowfullscreen="" class="Canva-iframe" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFHi9TVZAM/ysXVdK8Mi_sOCTGglxkEQg/view?embed" title="disegni test"></iframe>
 		<iframe allowfullscreen="" frameborder="0" height="440" onload="this.contentWindow.console.log=function() {};" src="https://instagram.com/arte_ad_arte/" title="Arte ad Arte - Instagram.com" width="320"></iframe-->
 	</div>
 	<div id="PageMe">
+		<h1>Mi presento</h1>
+		<p>Mi è stato dato in dono un talento</p>
+		<span class="SpanTextCenter">il disegno</span>
+		<p>
+			amo l'arte in tutte le sue forme<br />
+			la bellezza, l'amore per la creazione e la passione per la vita sono gocce di saggezza che è bene liberare come i cerchi dell'acqua che si espandono
+		</p>
+		<img>
+		<p>
+			Il mio talento lo metto a disposizione per chi ha un animo creativo ma non osa.<br />
+			Propongo lezioni di educazione al disegno per chi pensa di non saper disegnare<br />
+			<ul>
+				<li>Per i bambini che oltre a leggere e scrivere è possibile educarli al disegno;</li>
+				<li>Per adolescenti e ragazzi come orientamento per la scelta della scuola superiore o il percorso post-diploma;</li>
+				<li>Per i giovani adulti per il <span class="qot">non è mai troppo tardi</span>.</li>
+			</ul>
+			Diplomata nel 1992 al Liceo Artistico Umberto Boccioni di Milano.
+		</p>
 	</div>
-	<div id="PageDate">
+	<div id="PageRef">
+		<div class="_CX">
+			<h1>Simona Togentti</h1>
+			<ul>
+				<li>Telefono: <span>+39 349 366 7729</span></li>
+				<li>WhatsApp: <span>+39 349 366 7729</span></li>
+				<li>Mail: <span>ArteadArte.Simona@gmail.com</span></li>
+				<li>Studio: <span>Via Fratelli Bozzi - 11, 20153 Milano (MI)</span></li>
+			</ul>
+		</div>
+	</div>
+	<div id="PageEAD">
+		<ul>
+			<li>Martedì, Mercoledì, Venerdì<br />Lezioni di 60-90 minuti dalle 16:00 alle 20:00</li>
+			<li>Weekend<br />Stage di 6 ore</li>
+			<li>Piccoli gruppi e lezioni individuali</li>
+			<li>Informazioni e costi su <a href="">contatti</a></li>
+		</ul>
+		<!--table>
+			<tr><th>Giorno</th><th>Orario</th><th>Cosa</th></tr>
+			<tr><td>lunedì</td><td></td><td>//</td></tr>
+			<tr><td>Martedì</td><td>16:00 - 20:00</td><td>Lezioni</td></tr>
+			<tr><td>Mercoledì</td><td>16:00 - 20:00</td><td>Lezioni</td></tr>
+			<tr><td>Giovedì</td><td></td><td>//</td></tr>
+			<tr><td>Venerdì</td><td>16:00 - 20:00</td><td>Lezioni</td></tr>
+			<tr><td>Sabato o Domenica</td><td>Mattino/Pomeriggio</td><td>Stage</td></tr>
+		</table-->
+	</div>
+	<div id="PagePortFolio">
+		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFIp4oQVyc/0mnR5tKEeVy-CVYhiDCCGw/view?embed" title="disegni test"></iframe>
+	</div>
+	<div id="PageGallery">
 	</div>
 </div>
 
@@ -137,8 +216,11 @@ window.onload = function() {
 <div class="topbar">
 	<ul>
 		<li>Home</li>
-		<li>Chi sono, Cosa voglio fare</li>
-		<li>Quando ci si vede</li>
+		<li>Mi presento</li>
+		<li>Contatti</li>
+		<li>Educazione al disegno</li>
+		<li>Portfolio</li>
+		<li>Galleria</li>
 	</ul>
 </div>
 
