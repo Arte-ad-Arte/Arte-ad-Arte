@@ -15,7 +15,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam&display=swap');
 
 :root {
-	--TopBarHeight: 4rem;
+	--TopBarHeight: 4.7rem;
 	--color1: white;
 	--color2: black;
 	--color3: rgba(255,118,166,.977);
@@ -41,7 +41,7 @@
 
 #main {
 	position: absolute;
-	top: var(--TopBarHeight,4rem);
+	top: var(--TopBarHeight,4.7rem);
 	left: 50%;
 	width: 94%;
 	max-width: 40rem;
@@ -58,21 +58,35 @@
 	top: 0px;
 	left: 0px;
 	width: 100%;
-	height: var(--TopBarHeight,4rem);
+	height: var(--TopBarHeight,4.7rem);
 	background: black;
-} .topbar > ul {
+} .topbar > .list {
 	position: absolute;
-	bottom: 0px;
+	bottom: 50%;
 	left: 50%;
+	height: 100%;
 	width: 100%;
 	max-width: 34rem;
+	margin: 0px;
+	padding: 0px;
 	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
+	align-items: center;
+	list-style: none;
+	transform: translate(-50%,50%);
+} .topbar > .list > li {
+	display: block;
+	width: 100%;
+} .topbar > .list > li > ul {
+	width: 100%;
+	padding: 0px;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: center;
 	list-style: none;
-	transform: translateX(-50%);
 }
 
 .btn {
@@ -149,13 +163,13 @@
 function fixTopbar() {
 	let d = ['Home','Me','Ref','EAD','PortFolio','Gallery'];
 	for(let i=0; i<d.length; i++) {
-		document.querySelectorAll('.topbar > ul > li')[i].innerHTML = '<div class="btn TopBarLi Page'+d[i]+'" onclick="DisplayPage(\''+d[i]+'\')">'+document.querySelectorAll('.topbar > ul > li')[i].innerHTML+'</div>';
+		document.querySelectorAll('.topbar > .list > li > ul > li')[i].innerHTML = '<div class="btn TopBarLi Page'+d[i]+'" onclick="DisplayPage(\''+d[i]+'\')">'+document.querySelectorAll('.topbar > .list > li > ul > li')[i].innerHTML+'</div>';
 	};
 };
 
 function DisplayPage(p) {
 	document.querySelector('#main').innerHTML = document.querySelector('#Page'+p).innerHTML;
-	for(let i=0; i<document.querySelectorAll('.topbar > ul > li').length; i++) {
+	for(let i=0; i<document.querySelectorAll('.TopBarLi').length; i++) {
 		//~ console.log(document.querySelector('.TopBarLi:nth-child('+i+') > div'));
 		//~ console.log(document.querySelectorAll('.TopBarLi'));
 		//~ console.log(i,document.querySelectorAll('.TopBarLi:nth-child('+(i+1)+')'));
@@ -218,7 +232,7 @@ window.onload = function() {
 			</p>
 			<center>
 				<div style="width:min-content;">
-					<img alt="Me" src="data/simo.jpg" style="width:12.87rem;filter:black;">
+					<img alt="Me" src="data/simo.jpg" style="width:12.87rem;filter:grayscale(.93);">
 					<div style="text-align:center;">Diplomata nel 1992 al Liceo Artistico Umberto Boccioni di Milano.</div>
 				</div>
 			</center>
@@ -262,13 +276,21 @@ window.onload = function() {
 <div id="main"></div>
 
 <div class="topbar">
-	<ul>
-		<li>Home</li>
-		<li>Mi presento</li>
-		<li>Contatti</li>
-		<li>Educazione al disegno</li>
-		<li>Portfolio</li>
-		<li>Galleria</li>
+	<ul class="list">
+		<li>
+			<ul>
+				<li>Home</li>
+				<li>Mi presento</li>
+				<li>Contatti</li>
+			</ul>
+		</li>
+		<li>
+			<ul>
+				<li>Educazione al disegno</li>
+				<li>Portfolio</li>
+				<li>Galleria</li>
+			</ul>
+		</li>
 	</ul>
 </div>
 
