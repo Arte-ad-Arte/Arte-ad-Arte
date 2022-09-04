@@ -113,16 +113,16 @@
 } #id-n1 p {
     margin-block-start: 2em;
     margin-block-end: 2em;
-} #id-n1::before {
+} #id-n2 {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: url("data/goccia.png") no-repeat fixed center 2.81rem;
+	background: url("data/goccia.png") no-repeat fixed center;
 	background-size: contain;
 	opacity: .17;
-	content: "";
+	transform: scale(1.3);
 }
 
 .cursiveEleg {
@@ -198,12 +198,15 @@ window.onload = function() {
 	<div id="PageMe">
 		<div id="id-n1">
 			<center><h1>Mi presento</h1></center>
-			<p>Mi è stato dato in dono un talento</p>
-			<center class="cursiveEleg" style="transform:scale(1.31)translateX(-.39em);">Il disegno</center>
-			<p class="handwrite">
-				Amo l'arte in tutte le sue forme<br />
-				la bellezza, l'amore per la creazione e la passione per la vita sono gocce di saggezza che è bene liberare come i cerchi dell'acqua che si espandono
-			</p>
+			<div style="position:relative;">
+				<div id="id-n2"></div>
+				<p>Mi è stato dato in dono un talento</p>
+				<center class="cursiveEleg" style="transform:scale(1.31)translateX(-.39em);">Il disegno</center>
+				<p class="handwrite">
+					Amo l'arte in tutte le sue forme<br />
+					la bellezza, l'amore per la creazione e la passione per la vita sono gocce di saggezza che è bene liberare come i cerchi dell'acqua che si espandono
+				</p>
+			</div>
 			<p>
 				Il mio talento lo metto a disposizione per chi ha un animo creativo ma non osa.<br />
 				Propongo lezioni di educazione al disegno per chi pensa di non saper disegnare:<br />
