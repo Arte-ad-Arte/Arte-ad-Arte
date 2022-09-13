@@ -90,7 +90,7 @@
 }
 
 .btn {
-	cursor: grab;
+	cursor: pointer;
 } .btn:hover {
 	color: rgba(255,128,156,1);
 	transform: scale(1.1);
@@ -157,6 +157,23 @@
 	content: '”';
 }
 
+#id-n3 {
+	text-align: left;
+	list-style-type: none;
+} #id-n3 > li {
+	margin-bottom: 1em;
+}
+
+.link {
+	color: -webkit-link;
+	cursor: pointer;
+	text-decoration: underline;
+} .link:hover {
+	color: rgba(12,22,75,.99);
+	transform: scale(12.2);
+	transform-origin: center 0;
+}
+
 </style>
 <script>
 
@@ -205,9 +222,10 @@ window.onload = function() {
 
 <div id="no-js"><p>Sorry,<br />your browser may not support JavaScript<br />or, if you have them disabled, please enable them.</p></div>
 <div class="_DN">
-	<div id="PageHome">Educa l'arte che c'è in te.
-		<!--iframe allowfullscreen="" class="Canva-iframe" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFHi9TVZAM/ysXVdK8Mi_sOCTGglxkEQg/view?embed" title="disegni test"></iframe>
-		<iframe allowfullscreen="" frameborder="0" height="440" onload="this.contentWindow.console.log=function() {};" src="https://instagram.com/arte_ad_arte/" title="Arte ad Arte - Instagram.com" width="320"></iframe-->
+	<!--iframe allowfullscreen="" class="Canva-iframe" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFHi9TVZAM/ysXVdK8Mi_sOCTGglxkEQg/view?embed" title="disegni test"></iframe-->
+	<!--iframe allowfullscreen="" frameborder="0" height="440" onload="this.contentWindow.console.log=function() {};" src="https://instagram.com/arte_ad_arte/" title="Arte ad Arte - Instagram.com" width="320"></iframe-->
+	<div id="PageHome">
+		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFLYdjM-X8/2rVqGbMgOIK1yKjZukDoUA/view?embed" title="disegni test"></iframe>
 	</div>
 	<div id="PageMe">
 		<div id="id-n1">
@@ -250,11 +268,15 @@ window.onload = function() {
 		</div>
 	</div>
 	<div id="PageEAD">
-		<ul>
+		<center style="margin-top:3rem;">
+			<iframe allowfullscreen="" class="Canva-iframe" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFHi9TVZAM/ysXVdK8Mi_sOCTGglxkEQg/view?embed" title="disegni test"></iframe>
+		</center>
+		<ul id="id-n3">
 			<li>Martedì, Mercoledì, Venerdì<br />Lezioni di 60-90 minuti dalle 16:00 alle 20:00</li>
 			<li>Weekend<br />Stage di 6 ore</li>
 			<li>Piccoli gruppi e lezioni individuali</li>
-			<li>Informazioni e costi su <a href="">contatti</a></li>
+			<li>Informazioni e costi su <span class="qot"><span class="link" onclick="DisplayPage('Ref');">contatti</span></span></li>
+			<a href="8">Click</a>
 		</ul>
 		<!--table>
 			<tr><th>Giorno</th><th>Orario</th><th>Cosa</th></tr>
@@ -270,6 +292,13 @@ window.onload = function() {
 		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFIp4oQVyc/0mnR5tKEeVy-CVYhiDCCGw/view?embed" title="disegni test"></iframe>
 	</div>
 	<div id="PageGallery">
+		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFLk5gMWPs/-HlBtFzvK087y5h4stUilQ/view?embed" title="disegni test"></iframe>
+		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFLlMCK3r0/jH_g2vDLF_LKfV5osNUpoQ/view?embed" title="disegni test"></iframe>
+		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFLqLInTnk/NiXdX4XINV7n6tafKwhkig/view?embed" title="disegni test"></iframe>
+		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFLq-AgjCo/_DKIiCyMFIBkgflMR2W23A/view?embed" title="disegni test"></iframe>
+		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFL7CRIHwE/fLLKDxm3yAPbbGrdi13xIQ/view?embed" title="disegni test"></iframe>
+		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFL7WGT1qo/Dmv6obAEI_QNbz_1VmQ7kA/view?embed" title="disegni test"></iframe>
+		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFL7ljq5f4/9BUQgEtdKf-mxKkhJqzaTA/view?embed" title="disegni test"></iframe>
 	</div>
 </div>
 
