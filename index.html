@@ -4,10 +4,10 @@
 	<title>Arte ad Arte</title>
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 	<meta charset="UTF-8">
-	<link rel="shortcut icon" href="https://2wtnt.tk/me.png" type="image/x-icon">
+	<link rel="shortcut icon" href="data/goccia.png" type="image/x-icon">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Mono">
-	<link rel="stylesheet" href="https://2wtnt.tk/css.css">
-	<script type="text/javascript" src="https://2wtnt.tk/js.js"></script>
+	<link rel="stylesheet" href="css.css">
+	<script type="text/javascript" src="js.js"></script>
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
@@ -186,6 +186,7 @@ function fixTopbar() {
 
 function DisplayPage(p) {
 	document.querySelector('#main').innerHTML = document.querySelector('#Page'+p).innerHTML;
+	DisplayCanvases(p);
 	for(let i=0; i<document.querySelectorAll('.TopBarLi').length; i++) {
 		//~ console.log(document.querySelector('.TopBarLi:nth-child('+i+') > div'));
 		//~ console.log(document.querySelectorAll('.TopBarLi'));
@@ -202,8 +203,45 @@ function DisplayPage(p) {
 		//~ console.log(ClassList.replaceAll);
 
 		//~ console.log(document.querySelector('.TopBarLi:nth-child('+(i+1)+')').classList.value.replaceAll(' class-n1',''));
-		if(document.querySelector('.TopBarLi:nth-child('+(i+1)+')').classList.value.length!=0) document.querySelector('.TopBarLi:nth-child('+(i+1)+')').classList.value.replaceAll(' class-n1','') ; };
+
+		// TO FIX ! :
+		if(document.querySelector('.TopBarLi:nth-child('+(i+1)+')').classList.value.length!=0) document.querySelector('.TopBarLi:nth-child('+(i+1)+')').classList.value.replaceAll(' class-n1','') ;
+	};
 	document.querySelector('#Page'+p).classList.add('class-n1');
+};
+
+function DisplayCanvases(p) {
+	const c = {
+		"Me": [],
+		"Home": [
+			['Home', '<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFLYdjM-X8/2rVqGbMgOIK1yKjZukDoUA/view?embed" title="disegni test"></iframe>'],
+		],
+		"Ref": [],
+		"EAD": [
+			['EAD', '<iframe allowfullscreen="" class="Canva-iframe" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFHi9TVZAM/ysXVdK8Mi_sOCTGglxkEQg/view?embed" title="disegni test"></iframe>'],
+		],
+		"PortFolio": [
+			['PortFolio', '<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFIp4oQVyc/0mnR5tKEeVy-CVYhiDCCGw/view?embed" title="disegni test"></iframe>'],
+		],
+		"Gallery": [
+			['Gallery_1', '<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFLk5gMWPs/-HlBtFzvK087y5h4stUilQ/view?embed" title="disegni test"></iframe>'],
+			['Gallery_2', '<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFLlMCK3r0/jH_g2vDLF_LKfV5osNUpoQ/view?embed" title="disegni test"></iframe>'],
+			['Gallery_3', '<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFLqLInTnk/NiXdX4XINV7n6tafKwhkig/view?embed" title="disegni test"></iframe>'],
+			['Gallery_4', '<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFLq-AgjCo/_DKIiCyMFIBkgflMR2W23A/view?embed" title="disegni test"></iframe>'],
+			['Gallery_5', '<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFL7CRIHwE/fLLKDxm3yAPbbGrdi13xIQ/view?embed" title="disegni test"></iframe>'],
+			['Gallery_6', '<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFL7WGT1qo/Dmv6obAEI_QNbz_1VmQ7kA/view?embed" title="disegni test"></iframe>'],
+			['Gallery_7', '<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFL7ljq5f4/9BUQgEtdKf-mxKkhJqzaTA/view?embed" title="disegni test"></iframe>'],
+		],
+	};
+	for(let i=0; i<c[p].length; i++) {
+		document.querySelector('#main div#iframe_'+c[p][i][0]).innerText = 'Caricamento …';
+		document.querySelector('#main div#iframe_'+c[p][i][0]).outerHTML = c[p][i][1];
+		let L = document.querySelectorAll('#main .Canva-iframe-Full')[i].getClientRects()[0];
+		document.querySelector('#main').innerHTML += '<div id="loadingCanvasAlert" style="position:fixed;display:block;background:transparent;border:1e-4px solid transparent;top:'+L.top+'px;width:'+L.width+'px;height:'+L.height+'px;left:50%;transform:translateX(-50%);"><p style="position: absolute;left:50%;top:45%;transform:translate(-50%,-50%);">Caricamento …</p></div>';
+	};
+	setTimeout(function() {
+		for(let i=document.querySelectorAll('#main #loadingCanvasAlert').length-1; i>=0; i--) document.querySelectorAll('#main #loadingCanvasAlert')[i].outerHTML='' ;
+	},3000*c[p].length);
 };
 
 function nojs() {
@@ -213,19 +251,20 @@ function nojs() {
 window.onload = function() {
 	nojs();
 	fixTopbar();
-	DisplayPage('Home');
+	//~ DisplayPage('Home');
+	DisplayPage('Me');
 };
 
 </script>
 </head>
 <body>
 
-<div id="no-js"><p>Sorry,<br />your browser may not support JavaScript<br />or, if you have them disabled, please enable them.</p></div>
+<div id="no-js"><p>Caricamento …<!-- Sorry,<br />your browser may not support JavaScript<br />or, if you have them disabled, please enable them. --></p></div>
 <div class="_DN">
 	<!--iframe allowfullscreen="" class="Canva-iframe" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFHi9TVZAM/ysXVdK8Mi_sOCTGglxkEQg/view?embed" title="disegni test"></iframe-->
 	<!--iframe allowfullscreen="" frameborder="0" height="440" onload="this.contentWindow.console.log=function() {};" src="https://instagram.com/arte_ad_arte/" title="Arte ad Arte - Instagram.com" width="320"></iframe-->
 	<div id="PageHome">
-		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFLYdjM-X8/2rVqGbMgOIK1yKjZukDoUA/view?embed" title="disegni test"></iframe>
+		<div id="iframe_Home"></div>
 	</div>
 	<div id="PageMe">
 		<div id="id-n1">
@@ -269,7 +308,7 @@ window.onload = function() {
 	</div>
 	<div id="PageEAD">
 		<center style="margin-top:3rem;">
-			<iframe allowfullscreen="" class="Canva-iframe" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFHi9TVZAM/ysXVdK8Mi_sOCTGglxkEQg/view?embed" title="disegni test"></iframe>
+			<div id="iframe_EAD"></div>
 		</center>
 		<ul id="id-n3">
 			<li>Martedì, Mercoledì, Venerdì<br />Lezioni di 60-90 minuti dalle 16:00 alle 20:00</li>
@@ -288,16 +327,16 @@ window.onload = function() {
 		</table-->
 	</div>
 	<div id="PagePortFolio">
-		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFIp4oQVyc/0mnR5tKEeVy-CVYhiDCCGw/view?embed" title="disegni test"></iframe>
+		<div id="iframe_PortFolio"></div>
 	</div>
 	<div id="PageGallery">
-		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFLk5gMWPs/-HlBtFzvK087y5h4stUilQ/view?embed" title="disegni test"></iframe>
-		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFLlMCK3r0/jH_g2vDLF_LKfV5osNUpoQ/view?embed" title="disegni test"></iframe>
-		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFLqLInTnk/NiXdX4XINV7n6tafKwhkig/view?embed" title="disegni test"></iframe>
-		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFLq-AgjCo/_DKIiCyMFIBkgflMR2W23A/view?embed" title="disegni test"></iframe>
-		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFL7CRIHwE/fLLKDxm3yAPbbGrdi13xIQ/view?embed" title="disegni test"></iframe>
-		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFL7WGT1qo/Dmv6obAEI_QNbz_1VmQ7kA/view?embed" title="disegni test"></iframe>
-		<iframe allowfullscreen="" class="Canva-iframe-Full" onload="this.contentWindow.console.log=function() {};" src="https://www.canva.com/design/DAFL7ljq5f4/9BUQgEtdKf-mxKkhJqzaTA/view?embed" title="disegni test"></iframe>
+		<div id="iframe_Gallery_1"></div>
+		<div id="iframe_Gallery_2"></div>
+		<div id="iframe_Gallery_3"></div>
+		<div id="iframe_Gallery_4"></div>
+		<div id="iframe_Gallery_5"></div>
+		<div id="iframe_Gallery_6"></div>
+		<div id="iframe_Gallery_7"></div>
 	</div>
 </div>
 
